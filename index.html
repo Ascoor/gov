@@ -1,0 +1,121 @@
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>محافظة الدقهلية</title>
+,<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div> 
+<div class="crud">
+<div class="head">
+    <h2>محافظة الدقهلية</h2>
+    <p>ادارة المخالفات</p>
+</div>
+<div class="inputs">
+<div class="num">
+    <input type="number" id="date" placeholder="التاريخ">
+<input type="number" id="pnum" placeholder="مسلسل المتغير">
+<input type="number" id="wnum" placeholder="خط العرض">
+<input type="number" id="hnum" placeholder="خط الطول">
+
+
+</div>
+<div class="loc">
+<input placeholder="المحافظة" type="text" id="title1"> 
+<input placeholder="المركز" type="text" id="title2">
+<input placeholder="القرية" type="text" id="title3">
+</div>
+<div class="info">
+<input placeholder="نوع الأملاك" type="text" id="title4">
+<input placeholder="إسم جهة الولاية" type="text" id="title5">
+<input placeholder="القانونية" type="text" id="title6">
+</div>
+<div class="law">
+<input placeholder="الرد" type="text" id="title7">
+    <input placeholder="تفاصيل الرد" type="text" id="title8">
+</div>
+<div class="details">
+<input placeholder="موقف الإزالة" type="text" id="title9">
+<input placeholder="المرفقات" type="text" id="title10">
+</div>
+<button id="submit"> إضافة</button>
+</div>
+<div class="outputs">
+<div class="searchBlock">
+<input type="text" id="search" placeholder="بحث">
+<div class="btnSearch">
+    <button id="SearchTitle"> بحث بالمركز </button>
+    <button id="SearchNum"> بحث بالتاريخ </button>
+    <button id="SearchLaw"> بحث بالموقف </button>
+
+<table>
+    <tr>
+        <th>م</th>
+        <th>التاريخ</th>
+        <th>م.المتغير</th>
+        <th>خط العرض</th>
+        <th>خط الطول</th>
+        <th>المحافظة</th>
+        <th>المركز</th>
+        <th>القرية</th>
+        <th>نوع الأملاك</th>
+        <th>إسم جهة الولاية</th>
+        <th>القانونية</th>
+        <th>الرد</th>
+        <th> اتفاصيل الرد</th>
+        <th>تفاصيل الإزالة</th>
+        <th>المرفقات</th>
+        <tbody>
+<tr>
+    <td>1</td>
+    <td>25/8/2022</td>
+    <td>121454</td>
+    <td>23232</td>
+    <td>23213</td>
+    <td>الدقهلية</td>
+    <td>المنصورة أول</td>
+    <td> عبدالسلام عارف</td>
+    <td> املاك خاصة</td>
+    <td> حي غرب</td>
+    <td> تم العرض</td>
+    <td> رفض</td>
+    <td>تم الإزالة</td>
+    <td> مذكرة بالإزالة</td>
+    <td>بدون مستندات</td>
+    <td><button id="update">تعديل</button></td>
+    <td><button id="delete">حذف</button></td>
+        
+</tr>
+
+
+        </tbody>
+    
+    
+    
+    
+    
+    
+    </tr>
+
+</table>
+
+</div>
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+
+    </div>
+    <script>  src="main.js" </script>
+    
+    </body>
+</html>
