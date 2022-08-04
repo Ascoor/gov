@@ -61,26 +61,6 @@ letter-spacing: 2px;
     display:flexbox;
 
 }
-.loc input{
-width: auto;
-margin: 5px;
-    height: 40px 
-
-
-}
-
-.info input{
-    width: auto;
-
-    margin: 5px;
-    height: 40px 
-
-}
-.details input{
-    width: auto;
-    margin: 5px;
-    height: 40px 
-}
 
 .law input{
     width: auto;
@@ -88,16 +68,19 @@ margin: 5px;
     height: 40px 
 
 }
-.btSearch{
+.btnSearch{
     display: flex;
     justify-content:space-between ;
 }
 
-.btSearch botton{
+.btSearch button{
     width: 45%;
 }
 table{
     width: 100%;
     text-align: center;
-    margin: 10px;
+    margin: 10px 0;
+}
+#deleteAll{
+    margin:20px 0;
 }
