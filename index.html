@@ -1,16 +1,12 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
-
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <title>مرحبا بالعالم!</title>
+<html lang="en">
+  <head>
+    <meta charset=UTF-8/> 
     <title>محافظة الدقهلية</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Tajawal&display=swap" rel="stylesheet">
-    </link>
-</head>
+    
+
+  </head>
 
 <body>
 
@@ -20,25 +16,27 @@
             <p>ادارة المخالفات</p>
         </div>
         <div class="inputs">
-            <input placeholder="1234" type="number" id="dnum">
-                <h2>الموعد</h2>
-            <input placeholder="مسلسل المتغير" type="number" id="pnum">
-            <input placeholder="خط العرض" type="number" id="wnum">
-            <input placeholder="خط الطول" type="number" id="hnum">
+            <div id="producte">
+            <input placeholder="day" type="text" id="dnum">
+           
+            <input placeholder="num" type="number" id="pnum">
+            <input placeholder="num" type="number" id="wnum">
+            <input placeholder="num" type="number" id="hnum">
+      
+            <input placeholder="tone" type="text" id="title1">
+            <input placeholder="tplace" type="text" id="title2">
+            <input placeholder="tplace" type="text" id="title3">
 
-            <input placeholder="المحافظة" type="text" id="title1">
-            <input placeholder="المركز" type="text" id="title2">
-            <input placeholder="القرية" type="text" id="title3">
+            <input placeholder="kind" type="text" id="title4">
+            <input placeholder="name" type="text" id="title5">
+            <input placeholder="law" type="text" id="title6">
 
-            <input placeholder="نوع الأملاك" type="text" id="title4">
-            <input placeholder="إسم جهة الولاية" type="text" id="title5">
-            <input placeholder="القانونية" type="text" id="title6">
+            <input placeholder="ans" type="text" id="title7">
+            <input placeholder="ans" type="text" id="title8">
 
-            <input placeholder="الرد" type="text" id="title7">
-            <input placeholder="تفاصيل الرد" type="text" id="title8">
-
-            <input placeholder="موقف الإزالة" type="text" id="title9">
-            <input placeholder="المرفقات" type="text" id="title10">
+            <input placeholder="stat" type="text" id="title9">
+            <input placeholder="post" type="text" id="title10">
+        </div>
             <button id="submit">create</button>
   
     </div>
@@ -69,14 +67,13 @@
                     <th>الرد</th>
                     <th> اتفاصيل الرد</th>
                     <th>المرفقات</th>
-                    <th>تعديل</th>
-                    <th>حذف</th>
+                   
                 </tr>
                 <tbody id="tbody">
               
                 </tbody>
             </table>
-
+        </div>
         </div>
     </div>
 <script src="main.js"></script>

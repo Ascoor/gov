@@ -31,20 +31,22 @@ if(localStorage.product != null){
 
 submit.onclick = function(){
 	let newPro = {
-		dnum: dnum.Value,
-		pnum: pnum.Value,
-		wnum: wnum.Value,
-		hnum: hnum.Value,
-		title1: title1.Value,
-		title3: title3.Value,
-		title4: title4.Value,
-		title5: title5.Value,
-		title6: title6.Value,
-		title7: title7.Value,
-		title8: title8.Value,
-		title9: title9.Value,
-		title10: title10.Value,
+		dnum:dnum.Value,
+		pnum:pnum.Value,
+		wnum:wnum.Value,
+		hnum:hnum.Value,
+		title1:title1.Value,
+		title3:title3.Value,
+		title4:title4.Value,
+		title5:title5.Value,
+		title6:title6.Value,
+		title7:title7.Value,
+		title8:title8.Value,
+		title9:title9.Value,
+		title10:title10.Value,
 	}
+
+	
 	if(mood === 'create'){
 		dataPro.push(newPro);
 	}else{
@@ -56,10 +58,12 @@ submit.onclick = function(){
 	
 	//// save
 	localStorage.setItem('product',   JSON.stringify(dataPro)    )
+
+	clearData()
+	showData()
+
+
 }
-clearData()
-showData()
-	
 
 
 // clear inputes
@@ -80,11 +84,12 @@ function clearData(){
 	title9.Value = '';
 	title10.Value = '';
 }
+
 // read data
 function showData() 
 {
 	let table = '';
-	for (let i = 0; i < dataPro.length;i++){
+	for (let i = 1; i < dataPro.length;i++){
 		table += `
     <tr>
     <td>${i}</td>
@@ -103,10 +108,10 @@ function showData()
     <td>${dataPro[i].title9}</td>
     <td>${dataPro[i].title10}</td>
     <td>
-	<button onclick="updateData(${i})" id="update">تعديل</button>
+	<button onclick="updateData(${i})" id="update">update</button>
 	</td>
     <td>
-	<button onclick="deleteData(${i})" id="delete">حذف</button>
+	<button onclick="deleteData(${i})" id="delete">delete</button>
 	</td>
 </tr>
 `
@@ -120,10 +125,13 @@ function showData()
 		<button onclick="deleteAll()" id="delete">حذف</button>
 		`
 	}else{
-		btnDelete.innerHTML = ' ';
+		btnDelete.innerHTML = '';
 	}
 }
-showData()
+	showData()
+
+
+
 
 // delete
 function deleteData(i)
@@ -170,6 +178,9 @@ function updateData(i){
 
 }
 // search
+
+
+
 // clear
 
   
