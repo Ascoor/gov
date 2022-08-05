@@ -17,19 +17,17 @@ let title10 = document.getElementById('title10');
 let submit = document.getElementById('submit');
 
 let mood = 'create';
-
+let temp;
 
 // create case
 
-
 let dataPro;
-
 if(localStorage.product != null){
 	dataPro = JSON.parse(localStorage.product)
 } else {
 	dataPro = [];
-}
-
+	}
+		
 
 submit.onclick = function(){
 	let newPro = {
@@ -47,64 +45,21 @@ submit.onclick = function(){
 		title9: title9.Value,
 		title10: title10.Value,
 	}
-if(mood === 'create'){
-	if(newPro > 1){
-		for(let i = 0; i< newPro;i++){
-			dataPro.push(newPro);
-		}
-	     }else{
-	     dataPro.push(newPro);
-}
-	     }else{
-		dataPro[ temp ] = newPro;
-	}
-
-	// save local
-	localStorage.setItem('product', JSON.stringify(dataPro));
-
-	clearData();
-	showData();
-
-}
-// read data
-function showData() {
-	let table = '';
-	for (let i = 0; i < dataPro.length;i++){
-		table += `
-    <tr>
-    <td>${i}</td>
-    <td>${dataPro[i].dnum}</td>
-    <td>${dataPro[i].wnum}</td>
-    <td>${dataPro[i].hnum}</td>
-    <td>${dataPro[i].wnum}</td>
-    <td>${dataPro[i].title1}</td>
-    <td>${dataPro[i].title2}</td>
-    <td>${dataPro[i].title3}</td>
-    <td>${dataPro[i].title4}</td>
-    <td>${dataPro[i].title5}</td>
-    <td>${dataPro[i].title6}</td>
-    <td>${dataPro[i].title7}</td>
-    <td>${dataPro[i].title8}</td>
-    <td>${dataPro[i].title9}</td>
-    <td>${dataPro[i].title10}</td>
-    <td><button onclick="updateData(${i})" id="update">تعديل</button></td>
-    <td><button onclick="deleteData( ${i} )" id="delete">حذف</button></td>
-</tr>
-`
-
-	}
-
-	document.getElementById('tbody').innerHTML = table;
-	let btnDelete = document.getElementById('deleteAll');
-	if(dataPro.length > 0){
-		btnDelete.innerHTML = `
-		<button onclick="deleteAll()" id="delete">حذف</button>
-		`
+	if(mood === 'create'){
+		dataPro.push(newPro);
 	}else{
-		btnDelete.innerHTML = "";
+		dataPro[ temp ] = newPro;
+		mood = 'create'
+		submit.innerHTML = 'Create'
+		 
 	}
+	
+	//// save
+	localStorage.setItem('product',   JSON.stringify(dataPro)    )
 }
+clearData()
 showData()
+	
 
 
 // clear inputes
@@ -125,6 +80,50 @@ function clearData(){
 	title9.Value = '';
 	title10.Value = '';
 }
+// read data
+function showData() 
+{
+	let table = '';
+	for (let i = 0; i < dataPro.length;i++){
+		table += `
+    <tr>
+    <td>${i}</td>
+    <td>${dataPro[i].dnum}</td>
+    <td>${dataPro[i].wnum}</td>
+    <td>${dataPro[i].hnum}</td>
+    <td>${dataPro[i].wnum}</td>
+    <td>${dataPro[i].title1}</td>
+    <td>${dataPro[i].title2}</td>
+    <td>${dataPro[i].title3}</td>
+    <td>${dataPro[i].title4}</td>
+    <td>${dataPro[i].title5}</td>
+    <td>${dataPro[i].title6}</td>
+    <td>${dataPro[i].title7}</td>
+    <td>${dataPro[i].title8}</td>
+    <td>${dataPro[i].title9}</td>
+    <td>${dataPro[i].title10}</td>
+    <td>
+	<button onclick="updateData(${i})" id="update">تعديل</button>
+	</td>
+    <td>
+	<button onclick="deleteData(${i})" id="delete">حذف</button>
+	</td>
+</tr>
+`
+	}
+
+
+	document.getElementById('tbody').innerHTML = table;
+	let btnDelete = document.getElementById('deleteAll');
+	if(dataPro.length > 0){
+		btnDelete.innerHTML = `
+		<button onclick="deleteAll()" id="delete">حذف</button>
+		`
+	}else{
+		btnDelete.innerHTML = ' ';
+	}
+}
+showData()
 
 // delete
 function deleteData(i)
@@ -144,9 +143,9 @@ showData()
 // update
 
 function updateData(i){
-	dnum.Value =dataPro[i].dnum;
-	pnum.Value =dataPro[i].pnum;
-	hnum.Value =dataPro[i].hnum;
+	dnum.Value = dataPro[i].dnum;
+	pnum.Value = dataPro[i].pnum;
+	hnum.Value = dataPro[i].hnum;
 	wnum.Value = dataPro[i].wnum;
 	title1.Value = dataPro[i].title1;
 	title2.Value = dataPro[i].title2;
@@ -161,6 +160,11 @@ function updateData(i){
 	submit.innerHTML = 'Update';
 	mood = 'update';
 	temp = i;
+	scroll({ 
+		top:0,
+		behavior: 'smooth',
+	})
+	
 
 
 
