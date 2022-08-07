@@ -1,6 +1,5 @@
 
 let tbody = document.getElementById('tbody');
-let dnum = document.getElementById('dnum');
 let pnum = document.getElementById('pnum');
 let wnum = document.getElementById('wnum');
 let hnum = document.getElementById('hnum');
@@ -31,7 +30,6 @@ if(localStorage.product != null){
 
 submit.onclick = function(){
 	let newPro = {
-		dnum:dnum.Value,
 		pnum:pnum.Value,
 		wnum:wnum.Value,
 		hnum:hnum.Value,
@@ -69,10 +67,9 @@ submit.onclick = function(){
 // clear inputes
 
 function clearData(){
-	dnum.Value = '';
-	pnum.Value = '';
-	wnum.Value = '';
-	hnum.Value = '';
+	pnum.Value = '   ';
+	wnum.Value = '   ';
+	hnum.Value = '    ';
 	title1.Value = '';
 	title2.Value = '';
 	title3.Value = '';
@@ -93,8 +90,7 @@ function showData()
 		table += `
     <tr>
     <td>${i}</td>
-    <td>${dataPro[i].dnum}</td>
-    <td>${dataPro[i].wnum}</td>
+    <td>${dataPro[i].pnum}</td>
     <td>${dataPro[i].hnum}</td>
     <td>${dataPro[i].wnum}</td>
     <td>${dataPro[i].title1}</td>
@@ -151,7 +147,6 @@ showData()
 // update
 
 function updateData(i){
-	dnum.Value = dataPro[i].dnum;
 	pnum.Value = dataPro[i].pnum;
 	hnum.Value = dataPro[i].hnum;
 	wnum.Value = dataPro[i].wnum;
