@@ -1,84 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="ar" dir="rtl">
 <head>
-    <meta charset=UTF-8>
-    <title>محافظة الدقهلية</title>
-    <link rel="stylesheet" href="style.css">
-
-
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>محافظة الدقهلية</title>
+  <link rel="stylesheet" href="./css/style.css">
 </head>
-
 <body>
-
-    <div class="crud">
-        <div class="head">
-            <h2>محافظة الدقهلية</h2>
-            <p>ادارة المخالفات</p>
-        </div>
-        <div class="inputs">
-            <div id="product">
-
-                <input placeholder="num" type="number" id="pnum">
-                <input placeholder="num" type="number" id="wnum">
-                <input placeholder="num" type="number" id="hnum">
-
-                <input placeholder="tone" type="text" id="title1">
-                <input placeholder="tplace" type="text" id="title2">
-                <input placeholder="tplace" type="text" id="title3">
-
-                <input placeholder="kind" type="text" id="title4">
-                <input placeholder="name" type="text" id="title5">
-                <input placeholder="law" type="text" id="title6">
-
-                <input placeholder="ans" type="text" id="title7">
-                <input placeholder="ans" type="text" id="title8">
-
-                <input placeholder="stat" type="text" id="title9">
-                <input placeholder="post" type="text" id="title10">
-            </div>
-            <button id="submit">create</button>
-
-        </div>
-        <div class="outputs">
-            <div class="searchBlock">
-                <input type="text" id="search" placeholder="بحث">
-                <div class="btnSearch">
-                    <button id="SearchTitle"> بحث بالمركز </button>
-                    <button id="SearchNum"> بحث بالتاريخ </button>
-                    <button id="SearchLaw"> بحث بالموقف </button>
-                </div>
-                <div id="deleteAll">
-                    <button>حذف</button>
-                </div>
-                <table>
-                    <tr>
-                        <th>م</th>
-                        <th>التاريخ</th>
-                        <th>م.المتغير</th>
-                        <th>خط العرض</th>
-                        <th>خط الطول</th>
-                        <th>المحافظة</th>
-                        <th>المركز</th>
-                        <th>القرية</th>
-                        <th>نوع الأملاك</th>
-                        <th>إسم جهة الولاية</th>
-                        <th>القانونية</th>
-                        <th>الرد</th>
-                        <th> اتفاصيل الرد</th>
-                        <th>المرفقات</th>
-
-                    </tr>
-                    <tbody id="tbody">
-
-                    </tbody>
-                </table>
-            </div>
-        </div>
+  <div class="crud">
+    <div class="head">
+      <h2>محافظة الدقهلية</h2>
+      <p>وحدة المتغيرات المكانية</p>
     </div>
-    <script src="main.js"></script>
 
+    <div class="inputs">
+      <div class="price">
+        <input type="number" id="met1" placeholder="م المتغير">
+        <input type="number" id="met2" placeholder="خط العرض">
+        <input type="number" id="met3" placeholder="خط الطول">
+      </div>
+      <input type="text" id="category1" placeholder="المحافظة">
+      <input type="text" id="category2" placeholder="المركز">
+      <input type="text" id="category3" placeholder="القرية">
+      <input type="text" id="category4" placeholder="نوع الأملاك">
+      <input type="text" id="category5" placeholder="جهة الولاية">
+      <input type="text" id="category6" placeholder="القانونية">
+      <input type="text" id="category7" placeholder="الرد">
+      <input type="text" id="category8" placeholder="تفاصيل الرد">
+      <input type="text" id="category9" placeholder="موقف الإزالة">
+      <input type="text" id="category10" placeholder="المرفقات">
+      <button id="submit">إضافة</button>
+    </div>
 
+    <div class="outputs">
+      <div class="searchBlock">
+        <input type="text" id="search" placeholder="بحث">
+
+        <div class="btnSearch">
+          <button id="searchTitle">بحث بالمركز</button>
+          <button id="searchCategory">بحث بالقرية</button>
+        </div>
+        
+        <div id="deleteAll"></div>
+
+        <div class="tableContainer">
+          <table>
+            <tr>
+              <th>م</th>
+              <th>"م.المتغير</th>
+             <th>خط الطول</th>
+             <th>خط العرض</th>
+             <th>المحافظة</th>
+             <th>المركز</th>
+             <th>القرية</th>
+             <th>نوع الأملاك</th>
+             <th>جهةالولاية</th>
+             <th>القانونية/th>
+             <th>الرد</th>
+             <th>تفاصيل الرد</th>
+             <th>موقف الإزالة</th>
+             <th>المرفقات</th>
+            </tr>
+  
+            <tbody id="tbody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <script src="./js/index.js"></script>
 </body>
-
 </html>
