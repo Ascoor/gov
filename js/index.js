@@ -1,3 +1,4 @@
+let category11 = document.getElementById("category11");
 let met1 = document.getElementById("met1");
 let met2 = document.getElementById("met2");
 let met3 = document.getElementById("met3");
@@ -39,7 +40,9 @@ submit.addEventListener("click", () => {
   
   ) {
     const newPro = {
-
+      category11: 
+      category11.value.charAt(0).toUpperCase() +
+      category11.value.slice(1).toLowerCase(),
       met1: met1.value,
       met2: met2.value,
       met3: met3.value,
@@ -95,6 +98,7 @@ submit.addEventListener("click", () => {
 
 // clear inputs
 const clearData = () => {
+  category11.value = "";
   met1.value = "";
   met2.value = "";
   met3.value = "";
@@ -119,6 +123,7 @@ const showData = () => {
       row += `
       <tr>
           <td>${i + 1}</td>
+          <td>${t.category11}</td>
           <td>${t.met1}</td>
           <td>${t.met2}</td>
           <td>${t.met3}</td>
@@ -172,6 +177,7 @@ const deleteAll = () => {
 
 // update
 const updateData = (i) => {
+  category11.value = dataPro[i].category11;
   met1.value = dataPro[i].met1;
   met2.value = dataPro[i].met2;
   met3.value = dataPro[i].met3;
@@ -201,10 +207,10 @@ let searchMood = "title";
 const getSearchMood = (e) => {
   if (e.target.id == "searchTitle") {
     searchMood = "title";
-    search.placeholder = "Search By Title";
+    search.placeholder = "أكتب إسم المركز";
   } else {
     searchMood = "category2";
-    search.placeholder = "Search By Category";
+    search.placeholder = "أكتب التاريخ";
   }
 
   search.addEventListener("blur", () => {
@@ -224,13 +230,13 @@ const searchData = () => {
     for (let i = 0; i < dataPro.length; i++) {
       if (searchMood == "title") {
         if (
-          dataPro[i].title.toLowerCase().includes(search.value.toLowerCase())
+          dataPro[i].category2.toLowerCase().includes(search.value.toLowerCase())
         ) {
           row += `
             <tr>
                 <td>${i + 1}</td>
+                <td>${dataPro[i].category11}</td>
                 <td>${dataPro[i].met1}</td>
-                <td>${dataPro[i].met2}</td>
                 <td>${dataPro[i].met3}</td>
                 <td>${dataPro[i].category1}</td>
                 <td>${dataPro[i].category2}</td>
@@ -249,11 +255,12 @@ const searchData = () => {
         }
       } else {
         if (
-          dataPro[i].category.toLowerCase().includes(search.value.toLowerCase())
+          dataPro[i].category11 .toLowerCase().includes(search.value.toLowerCase())
         ) {
           row += `
             <tr>
                 <td>${i + 1}</td>
+                <td>${dataPro[i].category11}</td>
                 <td>${dataPro[i].met1}</td>
                 <td>${dataPro[i].met2}</td>
                 <td>${dataPro[i].met3}</td>

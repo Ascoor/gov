@@ -5,7 +5,7 @@
 }
 
 body {
-  background: rgb(255, 255, 255);
+  background: rgb(222, 255, 232);
   color: rgb(0, 0, 0);
   font-family: system-ui;
 }
@@ -26,11 +26,12 @@ input {
   height: 30px;
   outline: none;
   border: none;
-  background: rgb(195, 238, 208);
+  background: rgb(248, 255, 174);
   margin: 4px 0;
-  border-radius: 4px;
+  border-radius: 10%;
   padding: 4px;
   color: rgb(0, 0, 0);
+
 
 }
 
@@ -40,8 +41,8 @@ input:focus {
 }
 
 .price input {
-  width: 20%;
-  justify-content: space-between;
+  width: 24%;
+  
   
 }
 
@@ -82,10 +83,12 @@ table {
   width: 100%;
   text-align: center;
   margin: 10px 0;
+  background-color: #fff;
 }
 
 table th {
   text-transform: uppercase;
+  background-color: #a5cdb4;
 }
 
 th,td {
